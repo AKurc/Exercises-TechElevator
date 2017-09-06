@@ -316,7 +316,12 @@ public class Exercises {
 	 countXX("xxxx") → 
 	 */
 	public int countXX(String str) {
-		int i = str.indexOf("x");
+		int count = 0;
+		
+		for (i = str.indexOf("xx"); i != -1; i = str.indexOf(i + 1, "xx") {
+			count ++;
+		}
+		return count;
 	}
 
 	/*
