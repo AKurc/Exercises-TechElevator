@@ -26,17 +26,17 @@ public class Fibonacci {
 		int limit = input.nextInt();
 		input.nextLine();
 		
-		fibonacciSeq(limit);
+		fibonacci(limit);
 	}
 
-	public static void fibonacciSeq(int limit) {
-		int previous = 0;
+	public static void fibonacci(int limit) {
+		int first = 0;
 		System.out.print("0");
 		
 		for (int next = 1; next < limit; ) {
 			System.out.print("," + next);
-			int temp = previous + next;
-			previous = next;
+			int temp = first + next;
+			first = next;
 			next = temp;
 		}
 	}
