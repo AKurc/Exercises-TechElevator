@@ -301,7 +301,9 @@ public class Exercises {
 	public String frontTimes(String str, int n) {
 		String againStr = "";
 		
-		str.length() < 3  str.substring(0, 3);
+		if(str.length() > 3){
+			str = str.substring(0,  3);
+		}
 		
 		for (int i =0; i < n; i ++)
 			againStr = againStr + str;
@@ -318,8 +320,10 @@ public class Exercises {
 	public int countXX(String str) {
 		int count = 0;
 		
-		for (i = str.indexOf("xx"); i != -1; i = str.indexOf(i + 1, "xx") {
-			count ++;
+		for (int i = 0; i < str.length() -1; i++) {
+			if (str.substring(i, i + 2).equals("xx")) {
+				count ++;
+		}
 		}
 		return count;
 	}
@@ -331,6 +335,12 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
+		
+		for (int i = 0; i < str.length() -1; i++) {
+			
+			if (str.indexOf('x') == i && str.charAt(i + 1) == 'x')
+				return true;
+			}
 		return false;
 	}
 
@@ -341,7 +351,13 @@ public class Exercises {
 	 stringBits("Heeololeo") → "Hello"
 	 */
 	public String stringBits(String str) {
-		return null;
+		
+		String stringNew = "";
+		
+		for (int i = 0; i < str.length(); i += 2) {
+			stringNew = stringNew + str.charAt(i);
+		}
+		return stringNew;
 	}
 
 	/*
@@ -351,7 +367,12 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		return null;
+		String stringCode = "";
+		
+		for (int i = 0; i < str.length(); i ++) {
+			stringCode += str.substring(0, i + 1);
+		}
+		return stringCode;
 	}
 
 	/*
@@ -373,7 +394,18 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		return null;
+		
+		int stringRemoved = str.length();
+
+        if ( stringRemoved < 3 )
+        {
+            return str;
+        }
+        String stringThing = str.substring( 1, stringRemoved - 1 );
+        stringThing = stringThing.replace( "x", "" );
+
+        return str.charAt( 0 ) + stringThing + str.charAt( stringRemoved - 1 );
+		
 	}
 
 	/*
@@ -394,7 +426,7 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+		return (str.replace("yak", ""));
 	}
 	
 }

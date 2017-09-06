@@ -22,8 +22,17 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		
+		List<String> stringList = new ArrayList<String>();
+		
+		for (int i = 0; i < stringArray.length; i++) {
+			stringList.add(i, stringArray[i]);
+		}
+		return stringList;
 	}
+		 /*.get is index-based access- and not used here because get takes it out of the list not adding it to like .add does*/
+		
+		
 	
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order 
@@ -31,9 +40,18 @@ public class Exercises {
 	 list2Array( ["Red", "Orange", "Yellow"] )  ->  {"Red", "Orange", "Yellow"}
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
-	public String[] list2Array(List<String> stringList) {
-		return null;
-	}
+	public String[] list2Array (List<String> stringList) {
+		
+		String[] array = new String[stringList.size()];
+		
+		for(int i = 0; i < stringList.size(); i++) { 
+	
+			array[i] = stringList.get(i);
+		}
+		return array;
+		}
+			
+	
 	
 	/*
 	 Given an array of Strings, return an ArrayList containing the same Strings in the same order 
@@ -43,7 +61,15 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		
+		List<String> no4Letters = new ArrayList<String>();
+		
+		for (int i = 0; i < stringArray.length; i++) {
+			if (stringArray.length != 4)
+				no4Letters.add(stringArray.length[i]);
+		}
+		
+		return no4Letters;
 	}
 
 
@@ -56,7 +82,15 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		
+		Stack<Integer> stackString = new Stack<Integer>();
+		
+		
+			while( ! stackString.isEmpty()) {
+			System.out.println(stackString.pop());
+			}
+		
+		return stackString;
 	}
 
 	/*
