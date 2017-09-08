@@ -65,10 +65,10 @@ public class Exercises {
 		List<String> no4Letters = new ArrayList<String>();
 		
 		for (int i = 0; i < stringArray.length; i++) {
-			if (stringArray.length != 4)
-				no4Letters.add(stringArray.length[i]);
-		}
-		
+			if (stringArray[i].length() != 4) {
+				no4Letters.add(stringArray[i]);
+			}
+		}	
 		return no4Letters;
 	}
 
@@ -83,12 +83,15 @@ public class Exercises {
 	 */
 	public List<String> reverseList(List<String> stringList) {
 		
-		Stack<Integer> stackString = new Stack<Integer>();
+		Stack<String> stackList = new Stack<String>();
+		List<String> stackString = new ArrayList<>();
 		
+		stackList.addAll(stringList);
 		
-			while( ! stackString.isEmpty()) {
-			System.out.println(stackString.pop());
-			}
+		for(int i = 0; ! stackList.isEmpty(); i++) {
+			stackString.add(i, stackList.pop());
+		}
+			
 		
 		return stackString;
 	}
@@ -100,8 +103,18 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
-	}
+		//given an int[] and want to take each int/2 
+		//return ArrayList of doubles
+		//for (int i = 0; i < intArray.length; i++) {
+			//(intArray[i]/2.0) = input.nextDouble();
+		
+		List<Double> halvedDoubles = new ArrayList<>();
+			for(int i = 0; i < intArray.length; i++) {
+			halvedDoubles.add((intArray[i]) / 2.0);
+		}
+		
+		return halvedDoubles;
+    }
 	
 	/*
 	 Given a List of Integers, return the largest value.
@@ -110,7 +123,8 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		
+
 	}
 	
 	/*
@@ -120,7 +134,17 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+	//given array - create new array and return only odd values//	
+		List<Integer> aList = new ArrayList<Integer>();
+		
+		for(int i = 0; i < integerArray.length; i++) {
+			
+			if(integerArray[i] % 2 != 0) {
+				aList.add(integerArray[i]);
+			}
+		}	
+		return aList;
+
 	}
 	
 	/* 
@@ -131,8 +155,29 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		boolean isFound = false;
+		for(Integer newInt : integerList) { 
+			if(newInt == intToFind) {
+				if(isFound) { 
+					return true;
+				}
+				isFound = true;
+			}
+		}return false;
 	}
+				
+//	//each when you don't need the index-- to R of colon is list you're going to walk through//
+//		int count = 0;
+//		for(Integer newInt : integerList) { //L side colon defines data type-- for everything i Interger list do://
+//			if(newInt == intToFind) {
+//				if(count > 0) { //so found it at least once//
+//					return true;
+//				}
+//				count++; 
+//
+//		}
+//		return false; //didn't find it more than twice//
+//	}
 	
 	/*
 	 Given an array of Integers, return a List that contains the same Integers (as Strings). Except any multiple of 3
@@ -147,7 +192,23 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		//so given an array and need a string//
+		//for each because we need to do all of them//
+		List<String> stringList = new ArrayList<>();
+		
+			for(Integer i : integerArray) {
+				if(i % 15 == 0) { //so actual value being moduloded//
+					stringList.add("FizzBuzz");
+				}else if(i % 5 == 0) { 
+					stringList.add("Buzz");
+				}else if(i % 3 == 0) { 
+					stringList.add("Fizz");
+				}else {
+					stringList.add(i.toString());
+				}
+				}
+		return stringList;
+			
 	}
 
 	/*
@@ -157,7 +218,14 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
+		
+		Set<String> nopeRepeats = new HashSet<String>();
+			nopeRepeats.addAll(stringList);
+		
+		List<String> distinct = new ArrayList<String>();
+			distinct.addAll(nopeRepeats);
+			
+		return distinct;
 	}
 
 	/*
@@ -168,9 +236,23 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		List<Integer> wovenList = new ArrayList<>();
+	
+		int minLength = Math.min(listOne.size(), listTwo.size());
+		
+		for(int i = 0; i < minLength; i++) {
+			wovenList.add(listOne.get(i));
+			wovenList.add(listTwo.get(i));
+		}
+		
+		return wovenList;
 	}
-
+//	   // Add remainder Logic
+//    List<Integer> longerList = (listOne.size() > listTwo.size()) ? listOne : listTwo;
+//  for (int i = minListLength; i < longerList.size(); i++)
+//  {
+//      output.add(longerList.get(i));
+//  }
 	/*
 	 Given a list of Integers representing seat numbers, group them into ranges 1-10, 11-20, and 21-30.
 	 (Any seat number less than 1, or greater than 30 is invalid, and can be ignored.) Preserve the order

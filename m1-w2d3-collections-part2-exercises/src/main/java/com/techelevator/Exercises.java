@@ -1,6 +1,10 @@
 package com.techelevator;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import javax.print.DocFlavor.STRING;
 
 public class Exercises {
 
@@ -33,11 +37,31 @@ public class Exercises {
 	 * animalGroupName("walrus") -> "unknown"
 	 * 
 	 */
-	public String animalGroupName(String animalName) {
-		return null;
+	public String animalGroupName(String animalName) { 
+		
+		Map<String, String> nonpets = new HashMap<String, String>();
+			
+			nonpets.put("rhino", "Crash");
+			nonpets.put("giraffe", "Tower");
+			nonpets.put("elephant", "Herd");
+			nonpets.put("lion", "Pride");
+			nonpets.put("crow", "Murder");
+			nonpets.put("pigeon", "Kit");
+			nonpets.put("flamingo", "Pat");
+			nonpets.put("deer", "Herd");
+			nonpets.put("dog", "Pack");
+			nonpets.put("crocodile", "Float");
+		
+			if (nonpets.get(animalName.toLowerCase()) == null) {
+				return "unknown";			
+			}	
+			return nonpets.get(animalName.toLowerCase());
+			
+		
+			
 	}
 
-	/*
+	/*			
 	 * Given an String item number (a.k.a. SKU), return the discount percentage if the item is on sale.
 	 * If the item is not on sale, return 0.00.
 	 * 
@@ -60,7 +84,22 @@ public class Exercises {
 	 * 
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		Map<String, Double> discount = new HashMap<String, Double>();
+		
+		discount.put("KITCHEN4001", 0.20);
+		discount.put("GARAGE1070", 0.15);
+		discount.put("LIVINGROOM", 0.10);
+		discount.put("KITCHEN6073", 0.40);
+		discount.put("BEDROOM3434", 0.60);
+		discount.put("BATH0073", 0.15);
+		
+		String upperCase = itemNumber.toUpperCase();
+		
+		if(discount.get(upperCase) == null) {
+			return 0.00;
+		}
+		return(discount.get(upperCase));
+		
 	}
 	
 	/*
@@ -69,12 +108,25 @@ public class Exercises {
 	 * 
 	 * Note, monetary amounts are specified in cents: penny=1, nickel=5, ... $1=100, ... $10=1000, ...
 	 * 
-	 * robPeterToPayPaul({"Peter": 2000, "Paul": 99}) → {"Peter": 1000, "Paul": 1099}
+	 * robPeterToPayPaul({"Peter": 2000, "Paul": 99}) → {"Peter": 1000, "Paul": 1099} map with a key peter/paul with value for each//
 	 * robPeterToPayPaul({"Peter": 2000, "Paul": 30000}) → {"Peter": 2000, "Paul": 30000}
 	 * 
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		
+		int petersMoney = peterPaul.get("Peter"); //figue out peter's money and//
+		int paulsMoney = peterPaul.get("Paul"); //figure out paul's money//
+		
+		//if paul has less than 1000 and peter has more than 0, take half of peter's money and give to paul//
+		if(paulsMoney < 1000 && petersMoney > 0) {
+		
+			int stolenMoney = petersMoney / 2;
+			
+			peterPaul.put("Paul", paulsMoney + stolenMoney); //put puts new key into map--or key is there and it's getting overwritten//
+			peterPaul.put("Peter", petersMoney - stolenMoney);
+		}
+		return peterPaul;
+			
 	}
 	
     /*
@@ -87,7 +139,22 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+		//figure out peter's money
+		int peterMoney = peterPaul.get("Peter");
+		//figure out paul's money
+		int paulMoney = peterPaul.get("Paul");
+		//if peter has >=5000 more && paul has >=10000 --create string of /4 (25%) each partner's total worth//
+		if(peterMoney >= 5000 && paulMoney >= 10000) {
+			int peterContributeMoney = (peterMoney / 4);
+			int paulContributeMoney = (paulMoney / 4);
+			int partnerMoney = peterContributeMoney + paulContributeMoney;
+		
+			peterPaul.put("Peter", peterMoney - (peterMoney / 4));
+			peterPaul.put("Paul", paulMoney - (paulMoney / 4));
+			peterPaul.put(("PeterPaulPartnership"), partnerMoney);
+		}
+		return peterPaul;
+		
 	}
 	
 	/*
@@ -114,7 +181,26 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map<String, Integer> counts = new HashMap<>(); //have an array and need to go thru it- for each loop//
+		
+		for(String word : words){
+			
+			//have an empty map- need to get words into map and start at 1//
+			//if not in Map- put in Map with count(key) 1(value)//
+			
+			if(counts.containsKey(word)) {
+				int currentCount = counts.get(word); //get integer out of map and put value into int(int or immutable)//
+				currentCount++; //increment current count// //now put back into map//
+				counts.put(word, currentCount); //now overwrites what was there and puts incremented value back in//
+				//if it is in Map, increment count it already has//
+			}else { //put it in the map and start off at 1//
+				counts.put(word, 1);
+			
+			
+			} 
+		}
+		
+		return counts;
 	}
 	
 	/*

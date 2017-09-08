@@ -17,6 +17,7 @@ Please enter in a series of decimal values (separated by spaces): 460 8218 1 313
 987654321 in binary is 111010110111100110100010110001
 */
 
+//I'm stuck at this point. Trying this method didn't work either. Thinking I might just use the Integer.toString(n,2) and call it a day...//
 
 public class DecimalToBinary {
 
@@ -24,10 +25,29 @@ public class DecimalToBinary {
 		
 		Scanner input = new Scanner(System.in);
 		
-		String binaryIntInStr = Integer.toBinaryString(int);
+		System.out.print("Enter a decimal value: ");
+		String line = input.nextLine();
 		
-	      int i = 460;
-	      System.out.println("Number = " + i);
+		if (number < 0) {
+            System.out.println("Error: Not a positive integer");
+        } else { 
 
-	      System.out.println("Binary is " + Integer.toBinaryString(i));
+        	System.out.print("Convert to binary is:");
+        	System.out.print(binaryform(number));
+        }
+    }
+
+    private static void printBinaryform(int number) {
+        int remainder;
+
+        if (number <= 1) {
+            System.out.print(number);
+            return;
+        }
+
+        remainder = number %2; 
+        printBinaryform(number >> 1);
+        System.out.print(remainder);
+    }
 }
+
