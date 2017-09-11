@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import javax.print.DocFlavor.STRING;
+
 public class Exercises {
 
 	/*
@@ -382,9 +384,47 @@ public class Exercises {
 	 last2("xaxxaxaxx") → 1
 	 last2("axxxaaxx") → 2
 	 */
-	public int last2(String str) {
-		return 0;
+	public int last2(String str) { //don't know how long string is- want to get last to characters//
+		if (str.length() <= 2) {
+			return 0;
+		}
+		//get the last two characters//
+		String lastTwo = str.substring(str.length() -2);
+		
+		int count = 0;//need outside for loop when you're counting//
+		for(int i = 0; i < str.length() -2; i++) { //-2 b/c it tells you that you don't want to count the end substring//
+			if(str.substring(i, i + 2).equals(lastTwo)) {
+				count++;
+				}
+			}
+		return count;
 	}
+		
+		
+		
+		//	doesn't work as clearly as above//go thru string and find how many times it's in there//
+//		//don't count the last substring//
+//		
+//		if (string.length() <= 2) {
+//			return 0;
+//		}
+//		//get the last to characters//
+//		String lastTwo = str.substring(str.length() = -2, 2); //if you don't give second argument w/substring- goes to end of string//
+//		
+//		//go through string and find how many times it's in there//
+//		int matchIndex = 0; //keep track of matches//
+//		int numOfMatches = 0;
+//		int foundIndex;
+//		while((foundIndex = str.indexOf(lastTwo, matchIndex)) != -1);
+//			if(foundIndex != str.length() -2) {
+//			numOfMatches++;
+//			matchIndex = foundIndex + 1;
+//			//mat index= 1; takes last to characters and says tell me where they show up, then increment up 1- that's why it gets an if statement
+//			} else {
+//				break;
+//			}
+//		return numOfMatches;
+
 
 	/*
 	 Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end 

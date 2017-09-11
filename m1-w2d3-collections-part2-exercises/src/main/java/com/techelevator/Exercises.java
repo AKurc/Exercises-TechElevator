@@ -226,21 +226,9 @@ public class Exercises {
 	 * integerCount([]) → {}
 	 * 
 	 */
-	public Map<Integer, Integer> integerCount(int[] ints) {
-		Map<String, Integer> counts = new HashMap<>();
+	public Integer integerCount(int[] ints) {
 		
-		for(String word : ints){
-
-			//have an empty map- need to get words into map and start at 1//
-			//if not in Map- put in Map with count(key) 1(value)//
-
-			if(counts.containsKey(ints)) {
-				int currentCount = counts.get(ints); //get integer out of map and put value into int(int or immutable)//
-				currentCount++; //increment current count// //now put back into map//
-				counts.put(ints, currentCount); //now overwrites what was there and puts incremented value back in//
-				//if it is in Map, increment count it already has//
-			}else { //put it in the map and start off at 1//
-				counts.put(ints, 1);
+		Map<Integer, Integer> intKey = new HashMap<>();
 	}
 
 	/*
