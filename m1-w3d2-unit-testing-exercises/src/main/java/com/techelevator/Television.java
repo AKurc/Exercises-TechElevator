@@ -146,7 +146,7 @@ public class Television {
 //				currentVolume --;
 //			}
 //		}
-		if(isOn == true && currentVolume != 00) {
+		if(isOn == true && currentVolume != 0) {
 			currentVolume --;
 		}
 	}
