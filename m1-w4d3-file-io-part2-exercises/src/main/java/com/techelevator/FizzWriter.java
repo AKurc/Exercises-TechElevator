@@ -24,17 +24,17 @@ public class FizzWriter {
 				}
 			}return (Integer.toString(number));
 		}
-public static void fizzBuzzOutput(int number) {
-	File originalFizz = new File("FizzBuzz.txt");
+		public static void fizzBuzzOutput(int number) {
+			File originalFizz = new File("FizzBuzz.txt");
 	
-	try(PrintWriter writeBuzz = new PrintWriter(originalFizz)) {
-		for(int i = 1; i < number; i++) {
-			writeBuzz.println(fizzBuzz(i));
-		}
+			try(PrintWriter writeBuzz = new PrintWriter(originalFizz)) {
+				for(int i = 1; i < number; i++) {
+					writeBuzz.println(fizzBuzz(i));
+				}
 			
-	}catch (FileNotFoundException e) {
-		e.printStackTrace();
-		System.exit(1);
-}
-}
+			}catch (FileNotFoundException e) {
+				e.printStackTrace();
+				System.exit(1);
+			}	
+		}
 }

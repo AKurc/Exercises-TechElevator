@@ -8,7 +8,7 @@ public class WordSearch {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("What word would you like to search for?");
+		System.out.println("What word wou   ld you like to search for?");
 		Scanner userInput = new Scanner(System.in); //need a scanner to read user input
 		String searchWord = userInput.nextLine(); //search word, not "" so any word could used
 		
