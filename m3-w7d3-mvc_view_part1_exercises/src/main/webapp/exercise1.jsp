@@ -26,15 +26,37 @@
 	<body>
 		<h1>Exercise 1 - FizzBuzz</h1>
 		<ul>
+			<c:forEach begin="1" end="100" var="number" >
+				<c:set var="cssClass" value=""/> <%--adding a class to set a break to each when loop--%>
+				<c:set var="displayValue" value="${number}" /> <%--creating a variable displayValue and setting diplayValue to a number if it's not a Fizz/Buzz--%>
+				<c:choose>
+				
+					<c:when test="${number % 15 == 0}" >
+						<c:set var="displayValue" value="FizzBuzz!" />
+						<c:set var="cssClass" value ="fizzbuzz"/>
+						</c:when>
+					<c:when test="${number % 3 == 0}" >
+						<c:set var="displayValue" value="Fizz!" />
+						<c:set var="cssClass" value ="fizz"/>
+						</c:when>
+					<c:when test="${number % 5 == 0}" >
+						<c:set var="displayValue" value="Buzz!" />
+						<c:set var="cssClass" value ="buzz"/>
+						</c:when>
+					<c:otherwise />
+				</c:choose>
+				<li class="${cssClass}"><c:out value="${displayValue}"/></li>
+			</c:forEach>
+			
+			
+			
+			
+			
 			<%--
 				Add a list item (i.e. <li>) containing each of the numbers from 1 to 100.
-				
 				if the number is divisible by 3, show "Fizz!" instead and style the item using the "fizz" class
-				
 				if the number is divisible by 5, show "Buzz!" instead and style the item using the "buzz" class
-				
 				if the number is divisible by both 3 and 5, show "FizzBuzz!" instead  and style the item using the "fizzbuzz" class
-				
 				see exercise1-fizzbuzz.png for example output
 			 --%>
 		</ul>

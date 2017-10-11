@@ -43,7 +43,7 @@ INSERT INTO film_actor (actor_id, film_id)
 VALUES ((SELECT actor_id FROM actor WHERE first_name = 'Hampton' AND last_name = 'Avenue'), (SELECT film_id FROM film WHERE title = 'Euclidean PI'));
 
 INSERT INTO film_actor (actor_id, film_id)
-VALUES ((SELECT actor_id FROM actor WHERE first_name = 'lisa' AND last_name = 'Byway'), (SELECT film_id FROM film WHERE title = 'Euclidean PI'));
+VALUES ((SELECT actor_id FROM actor WHERE first_name = 'Lisa' AND last_name = 'Byway'), (SELECT film_id FROM film WHERE title = 'Euclidean PI'));
 --INSERT INTO table-name (column-names)
 --SELECT column-names 
 --FROM table-name
@@ -65,7 +65,9 @@ INSERT INTO category (name) VALUES 'Mathmagical';
 
 -- 5. Assign the Mathmagical category to the following films, "Euclidean PI", 
 -- "EGG IGBY", "KARATE MOON", "RANDOM GO", and "YOUNG LANGUAGE"
-
+BEGIN TRANSACTION;
+ROLLBACK;
+INSERT INTO category (name) VALUES 
 -- 6. Mathmagical films always have a "G" rating, adjust all Mathmagical films 
 -- accordingly.
 -- (5 rows affected)
