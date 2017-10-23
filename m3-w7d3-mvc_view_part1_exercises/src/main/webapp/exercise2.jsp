@@ -19,7 +19,8 @@
 		
 			<c:forEach begin="1" end="25" >
 				<c:set var="temp" value="${firstNum+secondNum}" />
-					<li> <c:out value="${temp}" /></li>
+					<li> <c:out value="${temp}" />
+					</li>
 
 				<c:set var="firstNum" value= "${secondNum}" />
 				<c:set var="secondNum" value= "${temp}" />

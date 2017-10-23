@@ -56,3 +56,18 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+
+.recipeTiles {
+display: inline-grid;
+max-width: 31%;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 2fr .7fr .3fr;
+background-color: #d9d9d9;
+border-radius:10%;
+margin:.5em;
+}
+
+.recipeImage {
+grid-column: 1/4;
+border-radius:10% 10% 0% 0%;
+}

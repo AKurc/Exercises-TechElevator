@@ -20,8 +20,21 @@
         
     </nav>
     <section id="main-content">
-
-       
+    
+		<c:forEach items="${products}" var="product">
+		<div class= jpgColumn>
+			<img src="img/${product.imageName}"/>
+			
+       		<c:out value="${product.name}"/>
+       		<c:out value="${product.topSeller}"/>
+       		<c:out value="${product.manufacturer}"/>
+       		<c:out value="${product.price}"/>
+       		<c:out value="${product.weightInLbs}"/>
+       		<c:out value="${product.averageRating}"/>
+       		
+       		
+       		</div>
+		</c:forEach>
 
     </section>
 </body>
