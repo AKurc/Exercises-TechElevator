@@ -1,0 +1,111 @@
+body {
+    background-color: #FAF3E5;
+    width: 90%;
+    font-family: sans-serif;
+    margin: 0 auto;
+}
+ul {
+    padding: 0px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 20px;
+}p, label, div.form-field {
+    font-size: 14px;
+}
+
+header {
+    margin: 25px;
+}
+
+    header h1 {
+        font-size: 40px;
+        color: #081D3D;
+    }
+
+    header p {
+        color: #081D3D;
+        font-size: 12px;
+    }
+
+    header img {
+        height: 110px;
+    }
+
+nav {
+    margin-top: 25px;
+}
+
+CARD
+.card_holder {
+		height:600px;
+	}
+
+	.card_container {
+		height:600px;
+	}
+
+	/* front pane, placed above back */
+	.front {
+		z-index: 10;
+		width:600px;
+		height:600px;
+		padding:0px;
+		/* for firefox 31 */
+		transform: rotateX(0deg);
+	}
+
+	/* back, initially hidden pane */
+	.back {
+		z-index: 5;
+		width:600px;
+		height:600px;
+		padding:0px;
+		transform: rotateX(180deg);
+		-webkit-transform: rotateX(180deg);
+	}
+
+	.inside {
+		z-index: -1;
+		width:600px;
+		height:600px;
+		padding:0px;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		/* for firefox 31 */
+	}
+}
+/* entire container, keeps perspective */
+.flip-container {
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+	z-index: 10;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+width: 0px;
+}
+/* flip speed goes here */
+.flipper, .inside {
+	transition: 2s;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	position: relative;
+}
+/* hide back of pane during swap */
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.relative{position:relative; width:600px;}
+.absolute-text{position:absolute; bottom:0; font-size:30px; font-family:"vedana"; background:rgba(251,251,251,0.5);
+padding:10px 20px; width:100%; text-align:center;}
+.absolute-text a{font-size:16px; color:#b92b27;}
