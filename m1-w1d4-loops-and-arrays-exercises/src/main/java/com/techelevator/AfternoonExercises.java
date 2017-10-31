@@ -322,80 +322,81 @@ public class AfternoonExercises {
 		
 		return larger;
 	}
-
-	/*
-	 Given an array of ints, return the sum of the first 2 elements in the array. If the array length
-	  is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
-	 sum2([1, 2, 3]) → 3
-	 sum2([1, 1]) → 2
-	 sum2([1, 1, 1, 1]) → 2
-	 */
-	public int sum2(int[] nums) {
-	
-	}
-
-	/*
-	 Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle 
-	 elements.
-	 middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
-	 middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
-	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
-	 */
-	public int[] middleWay(int[] a, int[] b) {
-		
-	}
-
-	/*
-	 Return the number of even ints in the given array. Note: the % "mod" operator computes the 
-	 remainder, e.g. 5 % 2 is 1.
-	 countEvens([2, 1, 2, 3, 4]) → 3
-	 countEvens([2, 2, 0]) → 3
-	 countEvens([1, 3, 5]) → 0
-	 */
-	public int countEvens(int[] nums) {
-		
-	}
-
-	/*
-	 Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 
-	 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do 
-	 not count.
-	 sum13([1, 2, 2, 1]) → 6
-	 sum13([1, 1]) → 2
-	 sum13([1, 2, 2, 1, 13]) → 6
-	 */
-	public int sum13(int[] nums) {
-		
-	}
-
-	/*
-	 Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
-	 has22([1, 2, 2]) → true
-	 has22([1, 2, 1, 2]) → false
-	 has22([2, 1, 2]) → false
-	 */
-	public boolean has22(int[] nums) {
-	
-	}
-	
-	/*
-	 Given an array of ints, return true if the array contains no 1's and no 3's.
-	 lucky13([0, 2, 4]) → true
-	 lucky13([1, 2, 3]) → false
-	 lucky13([1, 2, 4]) → false
-	 */
-	public boolean lucky13(int[] nums) {
-		
-	}
-
-	/*
-	 Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
-	 sum28([2, 3, 2, 2, 4, 2]) → true
-	 sum28([2, 3, 2, 2, 4, 2, 2]) → false
-	 sum28([1, 2, 3, 4]) → false
-	 */
-	public boolean sum28(int[] nums) {
-		
-	}
-
 }
+
+//	/*
+//	 Given an array of ints, return the sum of the first 2 elements in the array. If the array length
+//	  is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
+//	 sum2([1, 2, 3]) → 3
+//	 sum2([1, 1]) → 2
+//	 sum2([1, 1, 1, 1]) → 2
+//	 */
+//	public int sum2(int[] nums) {
+//		 return (sum2(nums[2]));
+//	}
+//
+//	/*
+//	 Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle 
+//	 elements.
+//	 middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
+//	 middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
+//	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
+//	 */
+//	public int[] middleWay(int[] a, int[] b) {
+//		
+//	}
+//
+//	/*
+//	 Return the number of even ints in the given array. Note: the % "mod" operator computes the 
+//	 remainder, e.g. 5 % 2 is 1.
+//	 countEvens([2, 1, 2, 3, 4]) → 3
+//	 countEvens([2, 2, 0]) → 3
+//	 countEvens([1, 3, 5]) → 0
+//	 */
+//	public int countEvens(int[] nums) {
+//		
+//	}
+//
+//	/*
+//	 Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 
+//	 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do 
+//	 not count.
+//	 sum13([1, 2, 2, 1]) → 6
+//	 sum13([1, 1]) → 2
+//	 sum13([1, 2, 2, 1, 13]) → 6
+//	 */
+//	public int sum13(int[] nums) {
+//		
+//	}
+//
+//	/*
+//	 Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
+//	 has22([1, 2, 2]) → true
+//	 has22([1, 2, 1, 2]) → false
+//	 has22([2, 1, 2]) → false
+//	 */
+//	public boolean has22(int[] nums) {
+//	
+//	}
+//	
+//	/*
+//	 Given an array of ints, return true if the array contains no 1's and no 3's.
+//	 lucky13([0, 2, 4]) → true
+//	 lucky13([1, 2, 3]) → false
+//	 lucky13([1, 2, 4]) → false
+//	 */
+//	public boolean lucky13(int[] nums) {
+//		
+//	}
+//
+//	/*
+//	 Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
+//	 sum28([2, 3, 2, 2, 4, 2]) → true
+//	 sum28([2, 3, 2, 2, 4, 2, 2]) → false
+//	 sum28([1, 2, 3, 4]) → false
+//	 */
+//	public boolean sum28(int[] nums) {
+//		
+//	}
+//
+//}

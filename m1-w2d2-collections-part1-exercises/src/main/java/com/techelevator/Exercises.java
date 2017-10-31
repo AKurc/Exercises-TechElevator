@@ -122,10 +122,11 @@ public class Exercises {
 	 findLargest( [987, 1234, 9381, 731, 43718, 8932] ) -> 43718
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
-	public Integer findLargest(List<Integer> integerList) {
-		
-
-	}
+//	public Integer findLargest(List<Integer> integerList) {
+//		List<Integer> list = new ArrayList<Integer>();
+//		
+//		return;
+//	}
 	
 	/*
 	 Given an array of Integers, return a List of Integers containing just the odd values.
@@ -134,7 +135,7 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-	//given array - create new array and return only odd values//	
+	//given array - create new list of ints and return only odd values//	
 		List<Integer> aList = new ArrayList<Integer>();
 		
 		for(int i = 0; i < integerArray.length; i++) {
@@ -196,17 +197,17 @@ public class Exercises {
 		//for each because we need to do all of them//
 		List<String> stringList = new ArrayList<>();
 		
-			for(Integer i : integerArray) {
-				if(i % 15 == 0) { //so actual value being moduloded//
-					stringList.add("FizzBuzz");
-				}else if(i % 5 == 0) { 
-					stringList.add("Buzz");
-				}else if(i % 3 == 0) { 
-					stringList.add("Fizz");
-				}else {
-					stringList.add(i.toString());
-				}
-				}
+		for (Integer i : integerArray) {
+			if (i % 15 == 0) { // so actual value being moduloded//
+				stringList.add("FizzBuzz");
+			} else if (i % 5 == 0) {
+				stringList.add("Buzz");
+			} else if (i % 3 == 0) {
+				stringList.add("Fizz");
+			} else {
+				stringList.add(i.toString());
+			}
+		}
 		return stringList;
 			
 	}
