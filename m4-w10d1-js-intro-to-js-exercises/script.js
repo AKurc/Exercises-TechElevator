@@ -5,10 +5,9 @@ function growBox1() {
 }
 
 //2. Write a function that finds and
-function shrinkIt(){
-	$('#box2').addClass('shrink');
-//$(.blue), instead of box 2, would select anything that has the blue class and shrink it
-}
+$('.blue').on('dblclick', function (){
+	$(this).addClass('shrink');
+});
 //3. Remove all of the elements inside of a div on the page
 function nukeIt(){
 	$('div').empty();
