@@ -38,7 +38,8 @@ public class AuthenticationController {
 		if(userDAO.searchForUsernameAndPassword(userName, password)) {
 			request.changeSessionId();
 			request.getSession().setAttribute("currentUser", userName);
-			if(destination != null && ! destination.isEmpty()){
+			if(destination != null && ! destination.isEmpty() && destination.startsWith("http://localhost")) {
+				
 				return "redirect:" + destination;
 			} else {
 				return "redirect:/users/"+userName;

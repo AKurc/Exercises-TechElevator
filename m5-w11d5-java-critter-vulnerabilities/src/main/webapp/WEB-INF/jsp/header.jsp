@@ -63,6 +63,7 @@
 						<c:otherwise>
 							<c:url var="logoutAction" value="/logout" />
 							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
+							<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 							<li><a id="logoutLink" href="#">Log Out</a></li>
 						</c:otherwise>
 					</c:choose>

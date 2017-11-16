@@ -9,9 +9,9 @@
 			<c:url var="messageHref" value="/messages">
 				<c:param name="userName" value="${message.fromUsername}" />
 			</c:url>
-			<span class="username"><a href="${messageHref}">${message.fromUsername}</a></span>
-			<span class="message-text">${message.text}</span>
-			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<span class="username"><a href="${messageHref}"><${message.fromUsername}</a></span>
+			<span class="message-text"><c:out value="${message.text}"/></span>
+			<time class="timeago" datetime="${message.createTime}"><c:out value="${message.createTime}"/></time>
 			
 			<c:url var="deleteMessage" value="/deleteMessage"></c:url>
 			<form action="${deleteMessage}" method="POST">
